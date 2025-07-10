@@ -1,6 +1,14 @@
 #!/bin/bash
 #
 
+if [ "$#" -eq 0 ]
+then
+	echo "Trebuie introdus numele interfetei de retea!"
+	exit 1
+fi
+
+INTERFACE=$1
+
 declare -A PACKETS
 declare -A BYTES
 
@@ -40,7 +48,7 @@ do
     		BYTES[$key]=$(( BYTES[$key] + length ))
 	fi
 		
-done < <(sudo tshark -i "enp0s3" -T fields -e ip.src -e tcp.srcport -e frame.len -n 2>/dev/null)	
+done < <(sudo tshark -i "$INTERFACE" -T fields -e ip.src -e tcp.srcport -e frame.len -n 2>/dev/null)	
 
 
 

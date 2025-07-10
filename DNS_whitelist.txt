@@ -1,0 +1,6 @@
+youtube.com
+auth.wikimedia.org
+dyna.wikimedia.org
+login.wikimedia.org
+connectivity-check.ubuntu.com
+search.brave.com
