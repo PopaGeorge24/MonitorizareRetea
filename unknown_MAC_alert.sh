@@ -10,6 +10,16 @@ fi
 INTERFACE=$1
 WHITELIST="MAC_whitelist.txt"
 
+trap '
+	echo -e "\n\nGenerarea de alerte MAC s-a incheiat!\n"
+' INT
+
+
+if [ ! -f "$WHITELIST" ]; then
+    echo "Avertisment: Fisierul $WHITELIST nu exista."
+fi
+
+
 while read mac;
 do
 	if ! grep -q "$mac" "$WHITELIST";
