@@ -8,7 +8,9 @@ do
 	echo "2.Generare de statistici."
 	echo "3.Generare alerte MAC necunoscut."
 	echo "4.Generare alerte DNS necunoscut."
-	echo "5.Iesi!"
+	echo "5.Monitorizare wi-fi."
+	echo "6.Monitorizare clienti conectati la AP-urile din jur."
+	echo "7.Iesi!"
 
 	read -p "Introdu optiunea dorita:" monitorizare
 
@@ -32,6 +34,14 @@ do
 		;;
 		
 		5)
+		./wifi_traffic_monitor.sh
+		;;
+		
+		6)
+		./clients_per_SSID.sh
+		;;
+		
+		7)
 		break
 		;;
 		
